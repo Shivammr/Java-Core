@@ -113,7 +113,8 @@
 	  {
 		  public static void main(String[]args)
 		  {
-			  multi obj1=new multi(), obj2=new multi();
+			  multi obj1=new multi(), 
+			  obj2=new multi();
 			  obj1.sam("Multi to One");
 			  obj2.mul("One to Multi");
 		  }

@@ -193,7 +193,7 @@ class multinherit implements one,multi
 		}
 	}
 
-
+// Interface //
 
 
 
