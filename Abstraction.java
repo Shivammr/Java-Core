@@ -28,6 +28,10 @@ public class Abstraction {
 		obj6.nobody();
 		obj6.body();
 		System.out.println("Static area is invoked as "+methbody.area(5));
+		Tea obj7=new water();
+		obj7.method1();
+		obj7.method2();
+		obj7.method3();
 	}
 }
 
@@ -193,8 +197,38 @@ class multinherit implements one,multi
 		}
 	}
 
-// Interface //
+// Interface with abstract class //
 
+interface Tea
+{
+	void method1();
+	void method2();
+	void method3();
+}
+
+abstract class sugar implements Tea
+{
+	public void method1()
+	{
+		System.out.println("Suger is added to tea");
+	}
+}
+
+abstract class milk implements Tea
+{
+	public void method2()
+	{
+		System.out.println("Milk is added to tea");
+	}
+}
+
+public class water extends sugar,milk
+{
+	public void method3()
+	{
+		System.out.println("Water is added to tea");
+	}
+}
 
 
 

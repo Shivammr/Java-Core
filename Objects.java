@@ -20,7 +20,7 @@
 				new refmeth().main(args);
 				new refcons().main(args);
 				new Anonym().main(args);
-				new One().main(args);
+				new On().main(args);
 				new Bank().main(args);
 				new copyobj().main(args);
 				new selfassign().main(args);
@@ -97,24 +97,24 @@
 		
 		// Multiple by one //
 		
-		class multi
+		class multii
 		{
 			void sam(String mult)
 			{
 				System.out.println(mult);
 			}
-			void mul(String one)
+			void mul(String on)
 			{
-				System.out.println(one);
+				System.out.println(on);
 			}
 		}
 		
-	  class One
+	  class On
 	  {
 		  public static void main(String[]args)
 		  {
-			  multi obj1=new multi(), 
-			  obj2=new multi();
+			  multii obj1=new multii(), 
+			  obj2=new multii();
 			  obj1.sam("Multi to One");
 			  obj2.mul("One to Multi");
 		  }
