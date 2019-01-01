@@ -204,6 +204,7 @@ interface Tea
 	void method1();
 	void method2();
 	void method3();
+	
 }
 
 abstract class sugar implements Tea
@@ -214,7 +215,7 @@ abstract class sugar implements Tea
 	}
 }
 
-abstract class milk implements Tea
+abstract class milk extends sugar
 {
 	public void method2()
 	{
@@ -222,16 +223,14 @@ abstract class milk implements Tea
 	}
 }
 
-public class water extends sugar,milk
+class water extends milk
 {
 	public void method3()
 	{
 		System.out.println("Water is added to tea");
+		System.out.println("Your tea is ready");
 	}
 }
-
-
-
 
 
 
