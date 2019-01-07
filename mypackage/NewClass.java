@@ -6,9 +6,11 @@ public class NewClass
 	{
 		return l*b;
 	}
+     public void qualify()
+     {
+    	 System.out.println("Importing with fully qualified name");
+     }
 	public static void main(String[] args) {
 	}
 
 }
-
-

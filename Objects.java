@@ -157,6 +157,16 @@
 			   obj.credit(5000);
 			   obj.debit(2000);
 		   }
+
+		public char[] sbi() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public char[] Sbi() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	   }
 	   
 // Copy Constructor //

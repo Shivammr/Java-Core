@@ -1,11 +1,11 @@
 package mypackage;
 
 public class Bank {
-		String sbi() 
+		public String sbi() 
 		{
 		return "govt";
 		}
-		String icici()
+		public String icici()
 		{
 			return "privt";
 		}

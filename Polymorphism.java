@@ -16,6 +16,8 @@ class Polymorphism
 		System.out.println("Number of resources in Mindtap are "+obj2.resources());
 		roye obj3= new roye();
 		music obj4;
+		obj4=new music();
+		obj4.sing();
 		obj4=new singer();
 		obj4.sing();
 		obj4= new song();
