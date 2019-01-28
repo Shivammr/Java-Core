@@ -5,6 +5,10 @@ public class Array {
 	 obj0.fix();
 	 methrray obj1= new methrray();
 	 obj1.pass(new int[] {2,4,6,8});         // Anonymous array //
+	 pullarray obj2= new pullarray();
+	 obj2.opt();
+	 multiarr obj3= new multiarr();
+	 obj3.decl();
 	}
 }
 
@@ -42,7 +46,102 @@ class methrray
 	}
 }
 
-// 
+// Array from the method //
+
+class pullarray
+{
+	static int[] arr()
+	{
+		return new int[]{2,4,6,7};
+	}
+	
+	static String[] brr()
+	{
+		return new String[] {"return", "array"};
+	}
+	
+	void opt(){
+	 int a[]= arr();               // array from method arr() //
+	 String b[]= brr();             // array from method brr() //
+	 for (int i=0; i<a.length; i++)
+		 System.out.println(a[i]);
+	 for (int j=0; j<b.length; j++)
+		 System.out.println(b[j]);
+}
+}
+
+// Multidimensional arrat //
+
+class multiarr
+{
+	int multarray[][]= new int[3][3];
+	void decl()
+	{
+	multarray[0][0]= 5;
+	multarray[0][1]= 10;
+	multarray[0][2]= 15;
+	multarray[1][0]= 20;
+	multarray[1][1]= 25;
+	multarray[1][2]= 30;
+	multarray[2][0]= 35;
+	multarray[2][1]= 40;
+	multarray[2][2]= 45;
+	for(int i=0; i<3; i++)
+	{
+		for(int j=0; j<3; j++)
+		{
+			System.out.print(multarray[i][j]+" ");
+		}
+		System.out.println();
+	}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,7 +7,8 @@ import static java.lang.Math.*;
 
 class Encapsulation extends NewClass
 {
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		NewClass obj0=new NewClass();
 		out.println("Area = "+ obj0.area(5,2));  //Static import //
 		Bank obj1=new Bank();
@@ -25,7 +26,6 @@ class Encapsulation extends NewClass
 		obj4.accprot(); // Importing protected method //
 		mypackage.NewClass obj2= new mypackage.NewClass(); // Using fully qualified name //
 		obj2.qualify(); // Importing public method //
-<<<<<<< HEAD
 
 // Encapsulated Class //
 		
@@ -38,28 +38,20 @@ class Encapsulation extends NewClass
 		out.println("Number of Members: "+obj5.getMembers());
 		out.println("Designation: "+obj5.getPost());
 		out.println("Amount of Salary: "+obj5.getSalary());
-=======
->>>>>>> 138fbd0a69a78e471e6db454a1af4e56f6155c6f
 		
 // Package Class //
  
 Package p=Package.getPackage("java.lang");  
   
 out.println("package name: "+p.getName());  
-  
 out.println("Specification Title: "+p.getSpecificationTitle());  
 out.println("Specification Vendor: "+p.getSpecificationVendor());  
 out.println("Specification Version: "+p.getSpecificationVersion());  
-<<<<<<< HEAD
-=======
-  
->>>>>>> 138fbd0a69a78e471e6db454a1af4e56f6155c6f
 out.println("Implementaion Title: "+p.getImplementationTitle());  
 out.println("Implementation Vendor: "+p.getImplementationVendor());  
 out.println("Implementation Version: "+p.getImplementationVersion());  
 out.println("Is sealed: "+p.isSealed());  
-<<<<<<< HEAD
-	}
+}
 }
 
 class encaps
@@ -107,10 +99,7 @@ class encaps
 	public void setSalary(double salary)
 	{
 		this.salary=salary;
-=======
->>>>>>> 138fbd0a69a78e471e6db454a1af4e56f6155c6f
 	}
-	
 }
 
 
@@ -155,29 +144,4 @@ class encaps
 
 
 
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 138fbd0a69a78e471e6db454a1af4e56f6155c6f
 
