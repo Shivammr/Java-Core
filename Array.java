@@ -9,6 +9,10 @@ public class Array {
 	 obj2.opt();
 	 multiarr obj3= new multiarr();
 	 obj3.decl();
+	 jagged obj4= new jagged();
+	 obj4.jaggedarr();
+	 copyarray obj5= new copyarray();
+	 obj5.copymyarray();
 	}
 }
 
@@ -70,7 +74,7 @@ class pullarray
 }
 }
 
-// Multidimensional arrat //
+// Multidimensional array //
 
 class multiarr
 {
@@ -97,13 +101,65 @@ class multiarr
 	}
 }
 
+// Jagged Array //
 
+class jagged
+{
+	public void jaggedarr()
+	{
+	int arr[][]=new int[3][];
+	    arr[0]= new int[3];
+	    arr[1]= new int[4];
+	    arr[2]= new int[2];
+	   
+	    int count=0;
+	    for(int i=0; i<arr.length; i++)          // Initializing a jagged array // 
+	    	for(int j=0; j<arr[i].length; j++)
+	    		arr[i][j]= count++;
+	    System.out.println();
+	    for(int i=0; i<arr.length; i++)         // Printing the initialized jagged array //
+	    {
+	    	for(int j=0; j<arr[i].length; j++)
+	    	{
+	    		System.out.print(arr[i][j]+" ");
+	    	}
+	    	    System.out.println();
+	    }
+}
+}
 
+// Copy Array //
 
+class copyarray
+{
+	static void copymyarray()
+	{
+		int intcopy[]={2,4,3,5,6};
+		int intpaste[]= new int[4];
+		System.arraycopy(intcopy, 1, intpaste, 0, 4);      // copy array method //
+		
+		char source[]= {'a', 's', 'h', 'i', 'v', 'a', 'm', 'm', 's', 'e'};
+		char destin[]= new char[7];
+		char destin2[]= new char[3];
+		System.arraycopy(source, 1, destin, 0, 7);
+		
+		System.out.println();
+		for(int i=0; i<intpaste.length; i++)
+		{
+			System.out.print(intpaste[i]);
+		}
+		System.out.println();
+		for(int j=0; j<destin.length; j++)
+		{
+			System.out.print(destin[j]);
+		}
+		System.out.println();
+		System.arraycopy(source, 0, destin2, 0, 3);
+		System.out.println(String.valueOf(destin2));
+	}
+}
 
-
-
-
+// 
 
 
 
