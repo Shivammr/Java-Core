@@ -1,5 +1,5 @@
-
 public class Array {
+
 	public static void main(String[] args) {
 	 definearray obj0=new definearray();
 	 obj0.fix();
@@ -13,7 +13,12 @@ public class Array {
 	 obj4.jaggedarr();
 	 copyarray obj5= new copyarray();
 	 obj5.copymyarray();
-	}
+	 addarray obj6= new addarray();
+	 obj6.addarr();
+	 multiarray obj7= new multiarray();
+	 obj7.prodarray();
+	 
+}
 }
 
 // Instantiation Initialization & Declaration //
@@ -54,12 +59,12 @@ class methrray
 
 class pullarray
 {
-	static int[] arr()
+	public int[] arr()
 	{
 		return new int[]{2,4,6,7};
 	}
 	
-	static String[] brr()
+	public String[] brr()
 	{
 		return new String[] {"return", "array"};
 	}
@@ -132,7 +137,7 @@ class jagged
 
 class copyarray
 {
-	static void copymyarray()
+	public void copymyarray()
 	{
 		int intcopy[]={2,4,3,5,6};
 		int intpaste[]= new int[4];
@@ -159,53 +164,51 @@ class copyarray
 	}
 }
 
-// 
+// Addition of arrays //
+
+class addarray
+{
+	 void addarr()
+	{
+		int a[][]={{2,4,6}, {6,8,4}};
+		int b[][]={{7,4,9}, {6,4,1}};
+		int add[][]= new int[2][3];
+		
+		for(int i=0; i<2; i++)
+		{
+			for(int j=0; j<3; j++)
+			{
+				add[i][j]=a[i][j]+b[i][j];
+				System.out.print(add[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+}
 
 
+// Multiplication of arrays //
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class multiarray
+{
+	void prodarray()
+	{
+		int bat[][]= {{2,3,5}, {4,5,2}, {6,4,1}};
+		int ball[][]= {{5,6,8}, {3,4,2}, {5,1,5}};
+		int shot[][]= new int[bat.length][ball.length];	
+		System.out.println("Product of arrays:-");
+	    for(int i=0; i<3; i++)
+	    {
+	    	for(int j=0; j<ball[0].length; j++)
+	    	{
+	    		shot[i][j]=0;                          //initializing the value//
+	    		for(int k=0; k<bat[0].length; k++)
+	    		{	
+	    			shot[i][j] += bat[i][k] * ball[k][j];
+	    		}
+	    		System.out.print(shot[i][j]+" ");
+	    	}
+	    	System.out.println();
+	    }
+	}
+}
