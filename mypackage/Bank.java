@@ -9,5 +9,5 @@ public class Bank {
 		{
 			return "privt";
 		}
-	}
-
+		
+}

@@ -1,6 +1,8 @@
 import static java.lang.System.*;
 
-class Wrapper
+import java.util.Scanner;
+
+class Recursion
 {
 	public static void main(String args[])
 	{
@@ -13,6 +15,17 @@ class Wrapper
 	catch(CloneNotSupportedException c){}
 	new maths().mathod();
 	new wraper().wrap();
+	new recursive().newrecur();
+	new recurfact().newfactorial();
+	new fibonacci().fiboseries();
+	out.println();
+	calling obj2= new calling();
+	out.println("Before calling mud= "+obj2.mud);
+	obj2.callbyvalue(50);
+	out.println("After calling mud= "+obj2.mud);
+	out.println("Before calling hut= "+obj2.hut);
+	obj2.callbyref(obj2);
+	out.println("After calling hut= "+obj2.hut);
 }
 }
 
@@ -48,7 +61,7 @@ class maths
 	
 }
 
-class  wraper
+class wraper
 {
 	int a=10;
 	Integer intobj=a;                     // Auto Boxing //
@@ -78,6 +91,198 @@ class  wraper
 		out.println("Un-boxed double= "+Double);
 	}
 }
+
+class recursive
+{
+	int n=1;
+	void newrecur()
+	{
+		if(n<5)
+		{
+			out.println("Recursive"+n);
+			n++;
+			newrecur();
+		}
+	}
+	
+}
+
+class recurfact
+{
+	public void newfactorial()
+	{
+	int n;
+	Scanner scanner=new Scanner(System.in);
+	out.println("Please enter the number for factorial: ");
+	n=scanner.nextInt();
+	int result=fact(n);
+	out.println(result);
+	}
+	static int fact(int n)
+	{
+		if (n==1)
+		return 1;
+		else
+		return n*fact(n-1);   // 5*fact(4)>> 4*fact(3)>> 3*fact(2)>> 2*fact(1)>> return 1>> 2>> 6>> 24>> 120
+	}
+}
+
+class fibonacci 
+{
+	public void fiboseries()
+	{
+		int a=0, b=1, n, k=0;
+		Scanner sc= new Scanner(System.in);
+		out.println("Please enter the number for fibonacci: ");
+		n=sc.nextInt();
+		
+		while(k<=n)
+		{
+			k=a+b;
+			System.out.print(k +" ");
+			a=b;
+			b=k;
+		}
+		
+	}
+}
+
+class calling
+{
+	int mud=50;
+	
+	void callbyvalue(int mud)                // call by value //
+	{
+		mud=mud+100;
+	}
+	
+	int hut=100;
+	
+	void callbyref(calling obj)             // call by reference //
+	{
+		obj.hut= obj.hut+50;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
