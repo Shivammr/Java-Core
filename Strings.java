@@ -8,6 +8,8 @@ public class Strings {
         new StringCom().compString();
         new SubString().Sub();
         new StringMeth().smethods();
+        new stringbuffer().stringbuff();
+        new stringbuilder().stringbuild();
 	}
 }
 
@@ -83,6 +85,82 @@ class StringMeth
 		out.println(fix.replace("Shivam", "Shivamm"));
 	}
 }
+
+class stringbuffer
+{
+	static void stringbuff()
+{
+		StringBuffer tab= new StringBuffer("Shivamm");
+		out.println("StringBuffer....");
+		out.println(tab.append(" Tester"));
+		out.println(tab.delete(7, 14));
+		out.println(tab.insert(1, "new"));
+		out.println(tab.replace(0, 6, "new"));
+		out.println(tab.reverse());
+		out.println(tab.capacity());
+		out.println(tab.append(" is a coder, tester as well as consultant"));
+	    out.println(tab.capacity());  // changed to (23*2)+2=48
+}
+}
+
+class stringbuilder
+{
+	static void stringbuild()
+	{
+		StringBuilder tap= new StringBuilder("Sam");
+		out.println("StringBuilder.....");
+		out.println(tap.append(" Tester"));
+		out.println(tap.delete(3, 10));
+		out.println(tap.insert(1, "new"));
+		out.println(tap.replace(0, 4, "new"));
+		out.println(tap.reverse());
+		out.println(tap.capacity());
+		out.println(tap.append("is a coder, tester as well as consultant"));
+		out.println(tap.capacity());
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
