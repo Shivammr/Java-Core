@@ -1,5 +1,7 @@
 import static java.lang.System.*;
 
+import java.util.StringTokenizer;
+
 public class Strings {
 	
 	public static void main(String[] args) {
@@ -10,6 +12,11 @@ public class Strings {
         new StringMeth().smethods();
         new stringbuffer().stringbuff();
         new stringbuilder().stringbuild();
+        new tokenizer().token();
+        ToString obj0= new ToString();
+        obj0.tostring("Shivamm", "Bareilly", 201301);
+        out.println(obj0);
+        
 	}
 }
 
@@ -120,7 +127,38 @@ class stringbuilder
 	}
 }
 
+class ToString
+{
+		String name;
+		String city;
+		int code;
+		
+	    void tostring(String name, String city, int code)
+		{
+			this.name=name;
+			this.city=city;
+			this.code=code;
+		}
+	    
+	    public String toString()
+	    {
+	    	return name+" "+city+" "+code;   // comment this out and verify the response
+	    }
+}
 
+class tokenizer
+{
+	static void token()
+	{
+		StringTokenizer take= new StringTokenizer ("My name is Shivamm", " ");
+		StringTokenizer took= new StringTokenizer("My, name, shivamm");
+		out.println(took.nextToken(","));
+      	while (take.hasMoreTokens())
+		{
+			out.println(take.nextToken());
+		}
+	}
+}
 
 
 
