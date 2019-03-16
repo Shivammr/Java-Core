@@ -1,5 +1,7 @@
 import static java.lang.System.*;
 
+import java.util.StringTokenizer;
+
 public class Strings {
 	
 	public static void main(String[] args) {
@@ -8,6 +10,13 @@ public class Strings {
         new StringCom().compString();
         new SubString().Sub();
         new StringMeth().smethods();
+        new stringbuffer().stringbuff();
+        new stringbuilder().stringbuild();
+        new tokenizer().token();
+        ToString obj0= new ToString();
+        obj0.tostring("Shivamm", "Bareilly", 201301);
+        out.println(obj0);
+        
 	}
 }
 
@@ -83,6 +92,113 @@ class StringMeth
 		out.println(fix.replace("Shivam", "Shivamm"));
 	}
 }
+
+class stringbuffer
+{
+	static void stringbuff()
+{
+		StringBuffer tab= new StringBuffer("Shivamm");
+		out.println("StringBuffer....");
+		out.println(tab.append(" Tester"));
+		out.println(tab.delete(7, 14));
+		out.println(tab.insert(1, "new"));
+		out.println(tab.replace(0, 6, "new"));
+		out.println(tab.reverse());
+		out.println(tab.capacity());
+		out.println(tab.append(" is a coder, tester as well as consultant"));
+	    out.println(tab.capacity());  // changed to (23*2)+2=48
+}
+}
+
+class stringbuilder
+{
+	static void stringbuild()
+	{
+		StringBuilder tap= new StringBuilder("Sam");
+		out.println("StringBuilder.....");
+		out.println(tap.append(" Tester"));
+		out.println(tap.delete(3, 10));
+		out.println(tap.insert(1, "new"));
+		out.println(tap.replace(0, 4, "new"));
+		out.println(tap.reverse());
+		out.println(tap.capacity());
+		out.println(tap.append("is a coder, tester as well as consultant"));
+		out.println(tap.capacity());
+	}
+}
+
+class ToString
+{
+		String name;
+		String city;
+		int code;
+		
+	    void tostring(String name, String city, int code)
+		{
+			this.name=name;
+			this.city=city;
+			this.code=code;
+		}
+	    
+	    public String toString()
+	    {
+	    	return name+" "+city+" "+code;   // comment this out and verify the response
+	    }
+}
+
+class tokenizer
+{
+	static void token()
+	{
+		StringTokenizer take= new StringTokenizer ("My name is Shivamm", " ");
+		StringTokenizer took= new StringTokenizer("My, name, shivamm");
+		out.println(took.nextToken(","));
+      	while (take.hasMoreTokens())
+		{
+			out.println(take.nextToken());
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
