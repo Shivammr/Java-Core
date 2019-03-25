@@ -9,14 +9,20 @@ public class Strings {
 		new StringDec().immuteString();
         new StringCom().compString();
         new SubString().Sub();
-        new StringMeth().smethods();
+        new StringMani().manipulate();
         new stringbuffer().stringbuff();
         new stringbuilder().stringbuild();
         new tokenizer().token();
         ToString obj0= new ToString();
         obj0.tostring("Shivamm", "Bareilly", 201301);
         out.println(obj0);
+        out.println("Is it palindrome: "+new palindrome().newpal("mom"));
+        out.println(Capitalize.capitalizeWord("my name is shivamm"));   
+        out.println(new reverse().reverword("my name is shivamm"));
+        out.println(new toggle().togg("my name is shivamm"));
+        out.println(new removechar().charremove("my name is shivamm", 6));
         
+        new CharAt().charat();
 	}
 }
 
@@ -69,9 +75,9 @@ class SubString
 	}
 }
 
-class StringMeth
+class StringMani
 {
-	static void smethods()
+	static void manipulate()
 	{
 		String name= " Shivamm ";
 		String star= "Black";
@@ -160,16 +166,112 @@ class tokenizer
 	}
 }
 
+class palindrome
+{
+	static boolean newpal(String str)
+	{
+		StringBuilder pal= new StringBuilder(str);
+		pal.reverse();
+		String rev=pal.toString();
+		
+		if(rev.equals(str))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
 
+class Capitalize
+{
+	public static String capitalizeWord(String str){  
+	    String words[]=str.split("\\s");  
+	    String capitalizeWord="";  
+	    
+	    for(String w:words){  
+	        String first=w.substring(0,1);  
+	        String afterfirst=w.substring(1);  
+	        capitalizeWord+=first.toUpperCase()+afterfirst+" ";  
+	    }  
+	    return capitalizeWord.trim();  
+	}  
+}  
 
+class reverse
+{
+	public static String reverword(String rev)
+	{
+		String words[]= rev.split("\\s");
+		String ReverseWord= "";
+		
+		for(String opt:words)
+		{
+			StringBuilder s= new StringBuilder(opt);
+			s.reverse();
+			ReverseWord+=s.toString()+" ";
+		}
+				return ReverseWord;
+	}
+}
 
+class toggle
+{
+	public static String togg(String word)
+	{
+		String t[]= word.split("\\s");
+		String toggleword= "";
+		
+		for(String g:t)
+		{
+			String first= g.substring(0, 1);
+			String second= g.substring(1);
+			toggleword+=first+second.toUpperCase()+" ";
+		}
+		return toggleword;
+	}
+}
 
+class removechar
+{
+	public static String charremove(String Str, int a)
+	{
+		return Str.substring(0, a)+ Str.substring(a+1);
+	}
+}
 
-
-
-
-
-
+class CharAt
+{
+	public static void charat()
+	{
+		String my="my name is shivamm";
+		int strleng= my.length();
+		
+		out.println("Char at index 3: "+my.charAt(3));
+		out.println("String length is: "+strleng);
+		out.println("Char at 15th index: "+my.charAt(strleng-3));
+		
+		for(int i=0; i<=strleng-1; i++)
+		{
+			if(i%2!=0)
+			{
+				out.println("Char at index "+i+":"+my.charAt(i));
+			}
+		}
+		
+		int count=0;
+		for(int i=0; i<=strleng-1; i++)
+		{
+			if(my.charAt(i)=='m')
+			{
+				count++;
+			}
+	    }
+		out.println("Number of times m appears: "+count);	
+}
+}
 
 
 
