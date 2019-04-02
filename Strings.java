@@ -13,6 +13,7 @@ public class Strings {
         new stringbuffer().stringbuff();
         new stringbuilder().stringbuild();
         new tokenizer().token();
+        new format().gets();
         ToString obj0= new ToString();
         obj0.tostring("Shivamm", "Bareilly", 201301);
         out.println(obj0);
@@ -50,6 +51,7 @@ class StringCom
 		String f="shivamm";
 		String g="Shivamm";
 		String h="shivam";
+		String bl="";
 		String i=new String("shivamm");
 		
 		out.println(f.equals(g));
@@ -58,7 +60,9 @@ class StringCom
 		out.println(f==i);
 		out.println(f.compareTo(h));
 		out.println(h.compareTo(f));
+		out.println(h.compareTo(bl));              // returns the string length //
 		out.println(f.compareToIgnoreCase(g));
+		out.println("h contains the sequence vam: "+h.contains("vam"));
 	}
 }
 
@@ -86,6 +90,7 @@ class StringMani
 		out.println(name.toLowerCase());
 		out.println(name.trim());
 		out.println(star.startsWith("Bl"));
+		out.println(name.endsWith(""));
 		out.println(name.endsWith("m "));
 		out.println(name.charAt(1));
 		out.println(name.length());
@@ -273,8 +278,39 @@ class CharAt
 }
 }
 
-
-
+class format
+{
+	public static void gets()
+	{
+		String rt= "Truck";
+		
+        String for1= String.format("It is %s", rt);
+        String for2= String.format("It is %d", 101);
+        out.println(for1);
+        out.println(for2);
+        
+        byte[] by= rt.getBytes();
+        for(byte yb: by)
+        {
+        	out.println(yb);
+        }
+        
+        char[] ch= new char[7];
+        try
+        {
+        	rt.getChars(0, 5, ch, 0);
+        	out.println(ch);
+        }catch(Exception ex)
+        {
+        	out.println(ex);
+        }
+        
+        out.println(rt.indexOf("Truck"));
+        out.println(rt.indexOf('c', 0));
+        
+	}
+	
+}
 
 
 
