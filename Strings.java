@@ -14,6 +14,7 @@ public class Strings {
         new stringbuilder().stringbuild();
         new tokenizer().token();
         new format().gets();
+        new strfunc().delim();
         ToString obj0= new ToString();
         obj0.tostring("Shivamm", "Bareilly", 201301);
         out.println(obj0);
@@ -318,6 +319,17 @@ class format
 	
 }
 
+class strfunc
+{
+	public static void delim()
+	{
+		String as= "This is a demo";
+		String joined= String.join("/", "04", "3", "2019");
+		out.println(joined);
+		out.println(as.replaceAll("i", "d"));
+		
+	}
+}
 
 
 
