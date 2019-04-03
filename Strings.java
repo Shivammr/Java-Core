@@ -304,13 +304,20 @@ class format
         {
         	out.println(ex);
         }
+	    String s = "Shivam"; //String literal -----String Pool
+		String ss ="Shivam"; //String literal ----No new memory is allocated
+		String ssss = "Shivam"; //String literal 
+		ssss.intern(); //--- it will create new memory
+        out.println(s.indexOf("hi"));
+        out.println(s.indexOf('v', 0));
         
-        out.println(rt.indexOf("Truck"));
-        out.println(rt.indexOf('c', 0));
-        
+		String sss = new String("Shivam"); //New Heap memory
+	    out.println(ssss);
+        out.println(s.isEmpty());
 	}
 	
 }
+
 
 
 
