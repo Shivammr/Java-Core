@@ -324,10 +324,21 @@ class strfunc
 	public static void delim()
 	{
 		String as= "This is a demo";
+		String nam= "Shivamm";
 		String joined= String.join("/", "04", "3", "2019");
+		int g= 10;
 		out.println(joined);
 		out.println(as.replaceAll("i", "d"));
+		out.println(as.startsWith("This"));
 		
+		char ch[]= nam.toCharArray();
+		for(int i=0; i<=ch.length-1; i++)
+		{
+			out.print(ch[i]);
+		}
+		out.println("");
+		String nap= String.valueOf(g);
+		out.println(nap);
 	}
 }
 
