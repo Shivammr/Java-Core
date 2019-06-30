@@ -1,6 +1,9 @@
 import static java.lang.System.*;
 
+import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Strings {
 	
@@ -25,6 +28,7 @@ public class Strings {
         out.println(new removechar().charremove("my name is shivamm", 6));
         
         new CharAt().charat();
+        new Regex().regular();
 	}
 }
 
@@ -342,7 +346,78 @@ class strfunc
 	}
 }
 
+class Regex
+{
+	public static void regular()
+	{
+		// Method 1
+		
+		Pattern p= Pattern.compile(".a");
+		Matcher m= p.matcher("ka");
+		boolean b= m.matches();
+		
+		// Method 2
+		
+		boolean b1= Pattern.compile(".a").matcher("ka").matches();
+		
+		// Method 3
+		
+		boolean b2= Pattern.matches(".a", "ka");
+		out.println("Matching the reg expr with the pattern:");
+		out.println(b+" "+b1+" "+b2);
+		
+		out.println(Pattern.matches(".s", "ads"));
+		out.println(Pattern.matches("..s", "ads"));
+		
+		// Quantifiers and Character Classes
+		
+		out.println("quantifiers:-");
+		out.println(Pattern.matches("[abc]?","ab"));
+		out.println(Pattern.matches("[abc]?","a" ));
+		out.println(Pattern.matches("[abc]+","a"));
+		out.println(Pattern.matches("[abc]*","a"));
+		
+		// Metacharacters
+		
+		out.println("metacharacters:-");
+		out.println(Pattern.matches("\\d", "234"));
+		out.println(Pattern.matches("\\d", "2"));
+		out.println(Pattern.matches("\\D", "1452"));
+		out.println(Pattern.matches("\\D", "dad"));
+		out.println(Pattern.matches("\\D*", "SAD"));
 
+		// Regular expression that accepts alphanumeric characters only
+		
+		out.println("alphanumeric:-");
+		out.println(Pattern.matches("[a-zA-Z0-9]{6}", "shiv05"));
+		out.println(Pattern.matches("[a-zA-Z0-9]{6}", "shivam05"));
+		out.println(Pattern.matches("[a-zA-Z0-9]{9}", "shivamm05"));
+		
+		// Regex Finder 
+		
+		Scanner sc= new Scanner(System.in);
+		while(true) {
+			
+			System.out.println("Enter the regex pattern");
+			Pattern pattern= Pattern.compile(sc.nextLine());
+			
+			System.out.println("Enter text");
+			Matcher match= pattern.matcher(sc.nextLine());
+			
+			boolean found= false;
+			
+			while(match.find()) {
+				System.out.println("I found the text "+match.group()+" starting at index "+match.start()+" and ending at index "+match.end());
+				found= true;
+			}
+			
+			if(!found) {
+				System.out.println("No match found");
+			}
+			
+		}
+	}
+}
 
 
 
