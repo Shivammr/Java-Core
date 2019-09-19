@@ -1,5 +1,7 @@
 import static java.lang.System.*;
 
+import java.io.IOException;
+
 public class Exceptions {
 
 	public static void main(String[] args) {
@@ -10,7 +12,47 @@ public class Exceptions {
 		new multiCatch2().getCatch2();
 		new nestedTry().getNest();
 		new finaly().getFinally();
-
+		new propagation().c();
+		
+		try
+		{
+		new Throw().throwing(24);
+		}
+		catch (Exception e)
+		{
+	    out.println("Exception given by throw keyword handled");
+		}
+		
+		new Throws().declare();
+		new noparentex().first();
+		
+		try
+		{
+		new parentex().second();
+		}
+	    catch (Exception e)
+		{
+	    	out.println("Exception handled");
+		}
+		
+		try
+		{
+		new childex().third();
+		}
+		catch (Exception e)
+		{
+	    	out.println("Exception handled");
+		}
+		
+		try
+		{
+		new Custom().marks(38);
+		}
+		catch (Exception m)
+		{
+			out.println("Exception occured: "+m);
+		}
+		
 	}
 }
 
@@ -153,19 +195,144 @@ class finaly {
 	}
 }
 
+class propagation {
+	
+	public void a()
+	{
+		int p=100/0;
+	}
+	
+	public void b()
+	{
+		a();
+	}
+	
+	public void c()
+	{
+		try
+		{
+		b();
+		}
+		catch(Exception e) { out.println("Exception propagated");}		
+	}
+}
 
+class Throw {
+	
+    public void throwing(int age)
+    {	      
+	     if (age<25)
+	     {
+	    	 throw new ArithmeticException("Age is invalid");
+	     }
+	     
+	     else
+	     {
+	    	 out.println("No exception");
+	     }
+	}
+    
+}
 
+class Throws {
+	
+	public void getter() throws IOException 
+	{
+		throw new IOException("new error");
+	}
+	
+	public void setter() throws IOException
+	{
+		declare();
+	}
+	
+	public void declare()
+	{
+		try
+		{
+			getter();
+		}
+		catch (Exception e) 
+		{
+			out.println("Exception declared and handled");
+		}
+	}
+}
 
+// 	Exception handling with method overriding
 
+class firstclass {
+	
+	public void first()
+	{
+		out.println("first class");
+	}
+	
+}
 
+class noparentex extends firstclass {
+	
+	public void first() throws ArithmeticException
+	{
+		out.println("child class called with no parent exception");
+	}
+}
 
+class secondclass {
+	
+	public void second() throws Exception
+	{
+		out.println("second class");
+	}
+}
 
+class parentex extends secondclass {
+	
+	public void second() throws Exception
+	{
+		out.println("child class called with same parent exception");
+	}
+}
 
+class thirdclass {
+	
+	public void third() throws IOException
+	{
+		out.println("third class");
+	}
+}
 
+class childex extends thirdclass {
+	
+	public void third() throws ArithmeticException
+	{
+		out.println("child class called with subclass exception");
+	}
+}
 
+class StudentFailedException extends Exception {  
+	
+	StudentFailedException(String s)
+	{  
+	  super(s);  
+	}  
+}  
 
-
-
+class Custom {
+	
+	public void marks(int score) throws StudentFailedException
+	{
+		if (score < 40)
+		{
+			throw new StudentFailedException("You are Failed");
+		}
+		
+		else
+		{
+			out.println("You are passed");
+		}
+	}
+}
 
 
 
