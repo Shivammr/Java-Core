@@ -1,6 +1,6 @@
 //Variables//
 
-public class Data {
+public class Operators {
 	
 	int ins;              //instance variable//
 	int a=5;              //instance variable//
@@ -15,7 +15,7 @@ public class Data {
 	 }
 	static int stat=7;    //static variable//
 public static void main(String[]args) {
-	Data obj=new Data();
+	Operators obj=new Operators();
 	obj.local();
 data_types obj2=new data_types();
 obj2.operation();
