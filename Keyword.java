@@ -30,9 +30,7 @@ class Keyword {
             obj12.display();
             extend obj13=new extend();
   		    obj13.print();
-  		    obj13.display();
-    		
-    		
+  		    obj13.display(); 		
     	}
     }
        

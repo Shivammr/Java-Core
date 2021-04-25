@@ -19,7 +19,7 @@ public static void main(String[]args) {
 	obj.local();
 data_types obj2=new data_types();
 obj2.operation();
-operators obj3=new operators();
+operator obj3=new operator();
 obj3.relation();
 	}
 }
@@ -55,7 +55,7 @@ class data_types{
 	
 // Operators //
 	
-class operators extends data_types{
+class operator extends data_types{
 	void relation(){
 		++i;                                                         // pre-increment operator
 		s--;                                                         //  post decrement operator
